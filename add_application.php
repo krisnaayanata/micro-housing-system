@@ -39,7 +39,7 @@
                           </div>
                       </div>
 											<div class="row">
-												<input type="hidden" name="residenceID" value="<?php echo $_SESSION['residenceID']; ?>">
+												<input type="hidden" name="residenceID" value="<?php echo $_GET['residenceID']; ?>">
                           <div class="input-field col s12">
                               <input id="text" type="text" class="validate" value="<?php echo $_GET['residenceID']; ?>" disabled>
                               <label for="text">Residence ID</label>
