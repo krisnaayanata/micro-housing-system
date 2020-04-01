@@ -2,9 +2,10 @@
 	include "../koneksi.php";
 
 	$residenceID=$_POST['residenceID'];
-	$availability=$_POST['availability'];
-
-	$sql="insert into unit values('','$residenceID','$availability')";
+	$unitNo=$_POST['unitNo'];
+	$userID = $_POST['userID'];
+	$availability="Available";
+	$sql="insert into unit values('$unitNo','$residenceID','$userID','$availability')";
 
 	$query=mysql_query($sql);
   if($query)
