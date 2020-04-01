@@ -30,7 +30,7 @@
               <div class="col s6">
                 <div class="row">
 
-                  <form class="col s12" action="edit_unit_process.php" method="POST">
+                  <form class="col s12" action="unit/edit_unit_process.php" method="POST">
                     <?php
                       while($hasil = mysql_fetch_assoc($query_cek)){
                         ?>
