@@ -4,6 +4,7 @@
 		header("location:login.php");
 	}
 	include "koneksi.php";
+	$userID = $_SESSION['userID'];
 ?>
 <!DOCTYPE html>
 <html>
@@ -30,6 +31,13 @@
               <div class="col s6">
                 <div class="row">
                     <form class="col s12" action="residence/add_residence_process.php" method="POST">
+											<div class="row">
+												<input type="hidden" name="userID" value="<?php echo $_SESSION['userID']; ?>">
+                          <div class="input-field col s12">
+                              <input id="text" type="text" class="validate" value="<?php echo $_SESSION['userID']; ?>" disabled>
+                              <label for="text">User ID</label>
+                          </div>
+                      </div>
                       <div class="row">
                           <div class="input-field col s12">
                               <input id="text" type="text" class="validate" name="address" required>
@@ -79,6 +87,7 @@
                 <thead>
                   <tr>
                       <th data-field="residenceID">Residence ID</th>
+											<th data-field="residenceID">User ID</th>
                       <th data-field="address">Address</th>
                       <th data-field="numUnits">Number of Units</th>
                       <th data-field="sizePerUnit">Size per Unit</th>
@@ -90,11 +99,12 @@
 
                 <tbody>
                   <?php
-                    $query = mysql_query("SELECT * FROM residence");
+                    $query = mysql_query("SELECT * FROM residence where userID = '$userID'");
                     while($hasil = mysql_fetch_assoc($query)){
                       echo "
                         <tr align='center'>
                           <td>".$hasil['residenceID']."</td>
+													<td>".$hasil['userID']."</td>
                           <td>".$hasil['address']."</td>
                           <td>".$hasil['numUnits']."</td>
                           <td>".$hasil['sizePerUnit']."</td>

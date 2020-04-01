@@ -4,6 +4,7 @@
 	if($_SESSION['levelUser']!="HousingOfficer"){
 		header("location:login.php");
 	}
+	$userID = $_SESSION['userID'];
 ?>
 <!DOCTYPE html>
 <html>
@@ -33,13 +34,14 @@
 											<div class="row">
                           <div class="input-field col s12">
                               <input id="text" type="text" class="validate" name="residenceID" required>
-                              <label for="text">Residence ID</label>
+                              <label for="text">Choose the Residence ID</label>
                           </div>
                       </div>
+											<input type="hidden" name="userID" value="<?php echo $_SESSION['userID']; ?>">
 											<div class="row">
 													<div class="input-field col s12">
-															<input id="text" type="text" class="validate" name="availability" required>
-															<label for="text">Availability</label>
+															<input id="text" type="text" class="validate" name="unitNo" required>
+															<label for="text">Unit Number</label>
 													</div>
 											</div>
                       <div class="row">
@@ -73,7 +75,7 @@
 
                 <tbody>
                   <?php
-                    $query = mysql_query("SELECT * FROM unit");
+                    $query = mysql_query("SELECT * FROM unit where userID = '$userID'");
                     while($hasil = mysql_fetch_assoc($query)){
                       echo "
                         <tr align='center'>
