@@ -21,7 +21,7 @@
     <div class="nav-wrapper container">
       <a id="logo-container" href="index.php" class="brand-logo">M H S</a>
       <ul class="right hide-on-med-and-down">
-        <li><a href="Register.php">Register</a></li>
+        <li><a href="registerAs.php">Register</a></li>
         <li><a href="login.php">Login</a></li>
       </ul>
     </div>
@@ -34,7 +34,7 @@
         <h5 class="header col s12 light">an easy way to find your house with your best price</h5>
       </div>
       <div class="row center">
-        <a href="register.php" id="download-button" class="btn-large waves-effect waves-light teal">Register Now!</a>
+        <a href="registerAs.php" id="download-button" class="btn-large waves-effect waves-light teal">Register Now!</a>
       </div>
       <br><br>
 

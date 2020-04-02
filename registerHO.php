@@ -24,7 +24,7 @@
             </div>
             <div class="col s6">
               <div class="row">
-                  <form class="col s12" action="register_process.php" method="POST">
+                  <form class="col s12" action="register_process_HO.php" method="POST">
                       <div class="row">
                           <div class="input-field col s12">
                               <input id="text" type="text" class="validate" name="username" required>
