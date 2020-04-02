@@ -9,13 +9,14 @@
 	$status = "New";
 
 	$sql="INSERT INTO application VALUES('','$applicantID','$residenceID','$applicationDate','$requiredMonth','$requiredYear','$status')";
+
 	$query=mysql_query($sql);
 
 
 
   if($query)
   {
-    echo "<script>alert('Data succesfuly add !'); window.location.href = '../view_application.php'</script>";
+    echo "<script>alert('Data succesfuly add !'); window.location.href = '../view_residence.php'</script>";
   }
 
 	else

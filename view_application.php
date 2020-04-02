@@ -4,6 +4,8 @@
 		header("location:login.php");
 	}
 	include "koneksi.php";
+	$userID = $_SESSION['userID'];
+	$applicantID = $_GET['applicantID'];
 ?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
@@ -38,7 +40,7 @@
 							</thead>
 							<tbody>
 								<?php
-									$query = mysql_query("SELECT * FROM application");
+									$query = mysql_query("SELECT * FROM application where applicantID='$userID'");
 									while($hasil = mysql_fetch_assoc($query)){
 										echo "
 											<tr align='center'>

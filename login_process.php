@@ -12,6 +12,7 @@ if($cek > 0){
 	$data = mysqli_fetch_assoc($login);
 
 	if($data['levelUser']=="HousingOfficer"){
+		$_SESSION["userID"] = $data["userID"];
 		$_SESSION['username'] = $username;
 		$_SESSION['levelUser'] = "HousingOfficer";
 		header("location:add_residence.php");
