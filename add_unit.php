@@ -67,6 +67,7 @@
             <table class="bordered center">
                 <thead>
                   <tr>
+											<th data-field="unitNo">Unit ID</th>
 											<th data-field="unitNo">Unit No</th>
                       <th data-field="residenceID">Residence ID</th>
                       <th data-field="availability">Availability</th>
@@ -79,10 +80,11 @@
                     while($hasil = mysql_fetch_assoc($query)){
                       echo "
                         <tr align='center'>
+													<td>".$hasil['unitID']."</td>
 													<td>".$hasil['unitNo']."</td>
                           <td>".$hasil['residenceID']."</td>
                           <td>".$hasil['availability']."</td>
-                          <td><a href='edit_unit.php?unitNo=".$hasil['unitNo']."'><i class='fa fa-edit'></i></a> | <a href='delete_unit.php?unitNo=".$hasil['unitNo']."'><i class='fa fa-remove'></i></a></td>
+                          <td><a href='edit_unit.php?unitID=".$hasil['unitID']."'><i class='fa fa-edit'></i></a> | <a href='unit/delete_unit.php?unitID=".$hasil['unitID']."'><i class='fa fa-remove'></i></a></td>
                         </tr>
                       ";
                     }

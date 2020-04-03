@@ -1,7 +1,7 @@
 <?php
   include "koneksi.php";
-  $unitNo = $_GET['unitNo'];
-  $query_cek = mysql_query("SELECT * FROM unit WHERE unitNo = '$unitNo'");
+  $unitID = $_GET['unitID'];
+  $query_cek = mysql_query("SELECT * FROM unit WHERE unitID = '$unitID'");
   $hasil_cek = mysql_num_rows($query_cek);
   if($hasil_cek==1){
 
@@ -34,19 +34,23 @@
                     <?php
                       while($hasil = mysql_fetch_assoc($query_cek)){
                         ?>
+                    <input type="hidden" name="unitID" value="<?php echo $hasil['unitID'] ?>">
+
                     <div class="row">
-                      <input type="hidden" name="unitNo" value="<?php echo $hasil['unitNo'] ?>">
                         <div class="input-field col s12">
-                            <input id="text" type="text" class="validate" value="<?php echo $hasil['unitNo'] ?>" disabled>
+                            <input id="text" type="text" class="validate" name="unitNo" value="<?php echo $hasil['unitNo'] ?>" required>
                             <label for="text">Unit NO</label>
                         </div>
                     </div>
                     <div class="row">
                         <div class="input-field col s12">
-                            <input id="text" type="text" class="validate" name="residenceID" value="<?php echo $hasil['residenceID'] ?>" required>
+                            <input type="hidden" name="residenceID" value="<?php echo $hasil['residenceID'] ?>">
+                            <input id="text" type="text" class="validate" value="<?php echo $hasil['residenceID'] ?>" disabled>
                             <label for="text">Residence ID</label>
                         </div>
                     </div>
+                    <input type="hidden" name="userID" value="<?php echo $hasil['userID'] ?>">
+      
                     <div class="row">
                         <div class="input-field col s12">
                             <input id="text" type="text" class="validate" name="availability" value="<?php echo $hasil['availability'] ?>" required>

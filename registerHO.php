@@ -50,13 +50,6 @@
                           </div>
                       </div>
                       <div class="row">
-                          <div class="input-field col s12">
-                              <input id="text" type="text" class="validate" name="monthlyIncome" required>
-                              <label for="text">Monthly Income</label>
-                          </div>
-                      </div>
-
-                      <div class="row">
                           <div class="col m12">
                               <p class="right-align">
 																	<a href="index.php" class="btn btn-large waves-effect waves-light">Cancle</a>

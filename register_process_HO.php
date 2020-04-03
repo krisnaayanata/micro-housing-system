@@ -5,10 +5,9 @@
 	$password=$_POST['password'];
 	$fullname=$_POST['fullname'];
 	$email=$_POST['email'];
-	$monthlyIncome=$_POST['monthlyIncome'];
 	$levelUser="HousingOfficer";
 
-	$sql="insert into user values('','$username','$password','$fullname','$email','$monthlyIncome','$levelUser')";
+	$sql="insert into user values('','$username','$password','$fullname','$email','','$levelUser')";
 
 	$sql_applicant ="insert into applicant values('','$fullname','$email','$monthlyIncome')";
 	$query=mysql_query($sql);

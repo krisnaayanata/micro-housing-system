@@ -50,27 +50,27 @@
         <div class="col s12 m4">
           <div class="icon-block">
             <h2 class="center teal-text"><i class="material-icons">flash_on</i></h2>
-            <h5 class="center">Speeds up development</h5>
+            <h5 class="center">Fast Serives</h5>
 
-            <p class="light">We did most of the heavy lifting for you to provide a default stylings that incorporate our custom components. Additionally, we refined animations and transitions to provide a smoother experience for developers.</p>
+            <p class="light">We did most of the heavy lifting for you to provide a faster service for better experience in finding your home needs.</p>
           </div>
         </div>
 
         <div class="col s12 m4">
           <div class="icon-block">
-            <h2 class="center center teal-text"><i class="material-icons">group</i></h2>
-            <h5 class="center">User Experience Focused</h5>
+            <h2 class="center center teal-text"><i class="material-icons">accessibility</i></h2>
+            <h5 class="center">Comfort Focused</h5>
 
-            <p class="light">By utilizing elements and principles of Material Design, we were able to create a framework that incorporates components and animations that provide more feedback to users. Additionally, a single underlying responsive system across all platforms allow for a more unified user experience.</p>
+            <p class="light">Having a comfortable residence would be everyone's desire. Younger friends might be one of those who long to live in a comfortable place so that they can relieve stress after a day of activities.</p>
           </div>
         </div>
 
         <div class="col s12 m4">
           <div class="icon-block">
-            <h2 class="center center teal-text"><i class="material-icons">settings</i></h2>
-            <h5 class="center">Easy to work with</h5>
+            <h2 class="center center teal-text"><i class="material-icons">attach_money</i></h2>
+            <h5 class="center">Affordable</h5>
 
-            <p class="light">We have provided detailed documentation as well as specific code examples to help new users get started. We are also always open to feedback and can answer any questions a user may have about Materialize.</p>
+            <p class="light">For the current problem young people from low income groups who have difficulty finding affordable accommodation in the city of Kuala Lumpur. But the government offered help through the upcoming Kuala Lumpur micro housing facility (DBKL).</p>
           </div>
         </div>
       </div>
@@ -83,8 +83,11 @@
     <div class="container">
       <div class="row">
         <div class="col l6 s12">
-          <h5 class="white-text">Company Bio</h5>
-          <p class="grey-text text-lighten-4">We are a team of college students working on this project like it's our full time job. Any amount would help support and continue development on this project and is greatly appreciated.</p>
+          <h5 class="white-text">About</h5>
+          <p class="justify grey-text text-lighten-4">By implementing technological advancements, the government can build an information
+						 system to make it easier for young people to look for micro homes. With the benefits and facilities available,
+						 this system must be developed as well as possible. This is in line with advances in information and communication
+						 technology such as internet and web technologies that are able to support the process of input, output and data search quickly and accurately.</p>
 
 
         </div>
@@ -110,7 +113,7 @@
     </div>
     <div class="footer-copyright">
       <div class="container">
-      Made by <a class="teal-text text-lighten-3" href="http://materializecss.com">Materialize</a>
+      Made by <a class="teal-text text-lighten-3">Student of HELP UNIVERSITY</a>
       </div>
     </div>
   </footer>

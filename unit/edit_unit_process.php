@@ -1,15 +1,15 @@
 <?php
   include "../koneksi.php";
+  $unitID=$_POST['unitID'];
+  $unitNo=$_POST['unitNo'];
   $residenceID=$_POST['residenceID'];
-  $address=$_POST['address'];
-  $numUnits=$_POST['numUnits'];
-  $sizePerUnit=$_POST['sizePerUnit'];
-  $monthlyRental=$_POST['monthlyRental'];
+  $userID=$_POST['userID'];
+  $availability=$_POST['availability'];
 
-  $sql = mysql_query("update residence set residenceID = '$residenceID', address='$address', numUnits='$numUnits', sizePerUnit='$sizePerUnit', monthlyRental='$monthlyRental' where residenceID='$residenceID'");
+  $sql = mysql_query("update unit set unitID = '$unitID', unitNo = '$unitNo', residenceID = '$residenceID', userID = '$userID', availability='$availability' where unitID='$unitID'");
   if($sql)
   {
-    echo "<script>alert('Data succesfuly edit !'); window.location.href = 'add_residence.php'</script>";
+    echo "<script>alert('Data succesfuly edit !'); window.location.href = '../add_unit.php'</script>";
   }
 
 	else

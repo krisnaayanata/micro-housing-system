@@ -1,15 +1,15 @@
 <?php
 	include "../koneksi.php";
 
-	$residenceID = $_GET['residenceID'];
+	$unitID = $_GET['unitID'];
 
-	$sql = "delete from residence where residenceID = '$residenceID'";
+	$sql = "delete from unit where unitID = '$unitID'";
 
 	$query = mysql_query($sql);
 
   if($query)
   {
-    echo "<script>alert('Data succesfuly deleted !'); window.location.href = 'add_residence.php'</script>";
+    echo "<script>alert('Data succesfuly deleted !'); window.location.href = '../add_unit.php'</script>";
   }
 
 	else
