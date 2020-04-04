@@ -14,7 +14,7 @@
 	if ($query)
 	{
 		$query2=mysql_query($sql_applicant);
-		echo "<script>alert ('Username = $username Password = $password'); location.href='login.php';</script>";
+		echo "<script>alert ('Success!'); location.href='login.php';</script>";
 	}
 
 	else
