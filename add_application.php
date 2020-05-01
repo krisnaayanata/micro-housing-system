@@ -11,7 +11,10 @@
   <head>
     <meta charset="utf-8">
     <title>Residence Data</title>
-    <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+		<!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+		<!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <link rel="stylesheet" href="css/index.css" media="screen" title="no title" charset="utf-8">
     <link rel="stylesheet" href="css/fontawesome.css" media="screen" title="no title" charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
@@ -46,8 +49,9 @@
                           </div>
                       </div>
                       <div class="row">
+												<input type="hidden" name="applicationDate" value="<?php echo date("Y-m-d"); ?>">
                           <div class="input-field col s12">
-                              <input id="text" type="date" class="validate" name="applicationDate" required>
+                              <input id="text" type="text" class="validate" value="<?php echo date("Y-m-d");?>" disabled>
                               <label for="text">Application Date</label>
                           </div>
                       </div>
@@ -77,12 +81,14 @@
         </div>
       </div>
     </div>
-    <script src="js/jquery-2.2.3.min.js"></script>
-    <script src="js/materialize.min.js"></script>
-    <script >
+    <script src="https://code.jquery.com/jquery-3.5.0.min.js"></script>
+		<!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script>
       $(document).ready(function(){
         $(".button-collapse").sideNav();
-      })
+				$('.datepicker').datepicker();
+      });
     </script>
   </body>
 </html>
