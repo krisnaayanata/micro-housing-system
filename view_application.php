@@ -6,6 +6,7 @@
 	include "koneksi.php";
 	$userID = $_SESSION['userID'];
 	$applicantID = $_GET['applicantID'];
+	$link = mysqli_connect("localhost", "root", "", "db_micro_housing");
 ?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
@@ -30,28 +31,27 @@
 							<thead>
 								<tr>
 										<th data-field="applicationID">Application ID</th>
-										<th data-field="applicantID">Applicant ID</th>
-										<th data-field="applicantID">Residence ID</th>
-										<th data-field="applcationDate">Application Date</th>
-										<th data-field="requiredMonth">Required Month</th>
-										<th data-field="requiredYear">Required Year</th>
+										<th data-field="residenceID">Residence ID</th>
+										<th data-field="numUnits">Unit Available</th>
+										<th data-field="monthlyRental">Monthly Rental</th>
 										<th data-field="status">Status</th>
 								</tr>
 							</thead>
 							<tbody>
 								<?php
-									$query = mysql_query("SELECT * FROM application where applicantID='$userID'");
-									while($hasil = mysql_fetch_assoc($query)){
+									$query = mysqli_query($link,"SELECT a.applicationID, a.residenceID, b.numUnits, b.monthlyRental, a.status
+									FROM application AS a INNER JOIN residence AS b on a.residenceID  = b.residenceID
+									WHERE applicantID = $userID");
+									while($hasil = mysqli_fetch_array($query)){
 										echo "
 											<tr align='center'>
 												<td>".$hasil['applicationID']."</td>
-												<td>".$hasil['applicantID']."</td>
 												<td>".$hasil['residenceID']."</td>
-												<td>".$hasil['applicationDate']."</td>
-												<td>".$hasil['requiredMonth']."</td>
-												<td>".$hasil['requiredYear']."</td>
+												<td>".$hasil['numUnits']."</td>
+												<td>".$hasil['monthlyRental']."</td>
 												<td>".$hasil['status']."</td>
 											</tr>
+
 										";
 									}
 								?>

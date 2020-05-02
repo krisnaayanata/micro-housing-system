@@ -5,7 +5,6 @@
 	}
 	include "koneksi.php";
 	$userID = $_SESSION['userID'];
-	$query_user= mysql_query("SELECT * FROM residence where userID = '$userID'");
 ?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
@@ -30,9 +29,11 @@
 							<thead>
 								<tr>
 										<th data-field="applicationID">Application ID</th>
-										<th data-field="applicantID">Applicant ID</th>
-										<th data-field="applicantID">Residence ID</th>
-										<th data-field="applcationDate">Application Date</th>
+										<th data-field="residenceID">Residence ID</th>
+										<th data-field="numUnits">numUnits</th>
+										<th data-field="monthlyRental">Monthly Rental</th>
+										<th data-field="username">Username</th>
+										<th data-field="monthlyIncome">Monthly Income</th>
 										<th data-field="requiredMonth">Required Month</th>
 										<th data-field="requiredYear">Required Year</th>
 										<th data-field="status">Status</th>
@@ -40,16 +41,20 @@
 							</thead>
 							<tbody>
 								<?php
-								while($hasil_user = mysql_fetch_assoc($query_user)){
-									$user_id = $hasil_user['residenceID'];
-									$query = mysql_query("SELECT * FROM application where residenceID = $user_id");
-									while($hasil = mysql_fetch_assoc($query)){
+									$query = mysql_query("SELECT a.applicationID, a.applicantID, a.residenceID,
+									r.numUnits, r.monthlyRental, u.username, u.monthlyIncome, a.requiredMonth, a.requiredYear, a.status
+									FROM application AS a INNER JOIN residence AS r on a.residenceID  = r.residenceID
+									INNER JOIN user AS u on a.applicantID = u.userID
+									WHERE  r.userID = $userID");
+									while($hasil = mysql_fetch_array($query)){
 										echo "
 											<tr align='center'>
 												<td>".$hasil['applicationID']."</td>
-												<td>".$hasil['applicantID']."</td>
 												<td>".$hasil['residenceID']."</td>
-												<td>".$hasil['applicationDate']."</td>
+												<td>".$hasil['numUnits']."</td>
+												<td>".$hasil['monthlyRental']."</td>
+												<td>".$hasil['username']."</td>
+												<td>".$hasil['monthlyIncome']."</td>
 												<td>".$hasil['requiredMonth']."</td>
 												<td>".$hasil['requiredYear']."</td>
 												<td>".$hasil['status']."</td>
@@ -57,8 +62,7 @@
 											</tr>
 										";
 									}
-									}
-								?>
+								;?>
 							</tbody>
 						</table>
 				</div>

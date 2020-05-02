@@ -18,10 +18,10 @@
     $update_application = mysql_query("UPDATE application SET status = '$status' where applicationID = '$applicationID'");
 		if($status=="Approved"){
 	    $update_all_application = mysql_query("UPDATE application SET status = 'Rejected' where status = 'New' AND applicantID = '$applicantID'");
-	    echo "<script>alert('Data succesfuly add !'); window.location.href = '../view_application_ho.php'</script>";
+	    echo "<script>alert('Data succesfuly allocated !'); window.location.href = '../view_application_ho.php'</script>";
 		}
 		else {
-			echo "<script>alert('Data succesfuly add !'); window.location.href = '../view_application_ho.php'</script>";
+			echo "<script>alert('Data succesfuly allocated !'); window.location.href = '../view_application_ho.php'</script>";
 		}
   }
 

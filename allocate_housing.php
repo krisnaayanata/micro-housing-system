@@ -95,8 +95,9 @@
                         </div>
                     </div>
                     <div class="row">
+                      <input type="hidden" name="duration" value="<?php echo $hasil['requiredMonth']+$hasil['requiredYear'] ?>">
                         <div class="input-field col s12">
-                            <input id="text" type="text" class="validate" name="duration" required>
+                            <input id="text" type="text" class="validate" value="<?php echo $hasil['requiredMonth']+$hasil['requiredYear'] ?>" disabled>
                             <label for="text">Duration</label>
                         </div>
                     </div>

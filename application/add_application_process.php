@@ -8,7 +8,11 @@
 	$requiredYear = $_POST['requiredYear'];
 	$status = "New";
 
-	$sql="INSERT INTO application VALUES('','$applicantID','$residenceID','$applicationDate','$requiredMonth','$requiredYear','$status')";
+	$query_user = mysql_query("SELECT * FROM residence where residenceID = '$residenceID'");
+	$hasil_user = mysql_fetch_assoc($query_user);
+	$user_id = $hasil_user['userID'];
+
+	$sql="INSERT INTO application VALUES('','$applicantID','$residenceID','$applicationDate','$requiredMonth','$requiredYear','$status','$user_id')";
 
 	$query=mysql_query($sql);
 
